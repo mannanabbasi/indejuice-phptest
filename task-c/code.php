@@ -44,6 +44,29 @@
     
     class Counter {
         
+        private $count = 0;
+
+        public function __construct($n=null) {
+            if(isset($n)) {
+                $this->count = $n;
+            }
+        }
+
+        public function count($n = null) {
+            if(isset($n)) {
+                $this->count += $n;
+            } else {
+                $this->count++;  
+            }         
+        }
+
+        public function get() {
+            return $this->count;
+        }
+
+        public function reset() {
+            $this->count = 0;
+        }
         
 
     }
